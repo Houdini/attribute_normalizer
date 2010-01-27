@@ -30,7 +30,7 @@ module AttributeNormalizer
             super(self.class.send(:normalize_#{attribute}, value))
           end
         end_src
-
+        
         module_eval src, __FILE__, __LINE__
 
       end
@@ -42,4 +42,4 @@ module AttributeNormalizer
   end
 end
 
-ActiveRecord::Base.send(:include, AttributeNormalizer)
+CassandraObject::Base.send :include, AttributeNormalizer
